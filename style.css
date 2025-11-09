@@ -150,8 +150,8 @@ body {
 }
 
 .profile-photo {
-    width: 220px;
-    height: 330px;
+    width: 200px;
+    height: 300px;
     border-radius: 12px;
     object-fit: cover;
     flex-shrink: 0;
@@ -490,6 +490,35 @@ body {
 
 .interests-list li:hover::before {
     transform: translateX(3px);
+    color: var(--gradient-end);
+}
+
+.awards-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.awards-list li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1.05em;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.awards-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+.awards-list li:hover::before {
+    transform: scale(1.2);
     color: var(--gradient-end);
 }
 
@@ -875,5 +904,22 @@ body {
         grid-template-columns: 1fr;
         gap: 15px;
     }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+}
+
+.footer-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.85em;
+    color: var(--text-tertiary);
+    margin: 0;
+    line-height: 1.6;
 }
 

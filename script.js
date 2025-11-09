@@ -71,3 +71,16 @@ function updateScrolledClass() {
 window.addEventListener('scroll', updateScrolledClass);
 updateScrolledClass();
 
+// Update last updated date
+function updateLastUpdated() {
+    const lastUpdatedElement = document.getElementById('lastUpdated');
+    if (lastUpdatedElement) {
+        const now = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        lastUpdatedElement.textContent = now.toLocaleDateString('en-US', options);
+    }
+}
+
+// Run on load
+updateLastUpdated();
+
