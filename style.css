@@ -940,6 +940,18 @@ body {
 
 /* Small Screen Mobile Optimization */
 @media screen and (max-width: 480px) {
+    /* 背景图片宽度等于屏幕宽度 */
+    .hero-image {
+        width: 100%;
+    }
+
+    /* 照片上移40pt */
+    .profile-photo {
+        width: 150px;
+        height: 225px;
+        margin-top: -40px;
+    }
+
     .name {
         font-size: 1.6em;
     }
@@ -948,20 +960,58 @@ body {
         font-size: 1.2em;
     }
 
-    .profile-photo {
-        width: 150px;
-        height: 225px;
+    /* 标签位置：放在照片下方名字上方 */
+    .header-top {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+        position: relative;
     }
 
     .top-nav {
-        flex-direction: row;
+        position: absolute;
+        top: 185px; /* 照片高度225px - 上移40pt(约40px) = 185px，标签放在照片底部 */
+        left: 0;
+        right: 0;
+        transform: none;
         width: 100%;
+        justify-content: flex-start;
         flex-wrap: wrap;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        z-index: 5;
     }
 
+    .name-section {
+        margin-top: 50px; /* 为标签留出空间 */
+    }
+
+    /* 标签大小缩小三分之二 */
     .folder-tab {
-        flex: 1;
-        min-width: 80px;
+        padding: 3.33px 7.33px;
+        font-size: 0.33em;
+        font-weight: 600;
+        min-width: 28.33px;
+        flex: 0 0 auto;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--bg-primary);
+        margin-right: 1px;
+        box-shadow: 0 -1px 2px var(--shadow);
+        margin-bottom: -1px;
+    }
+
+    .folder-tab::before {
+        height: 1px;
+        bottom: -1px;
     }
 
     .theme-toggle {
